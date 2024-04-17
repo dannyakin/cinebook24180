@@ -157,7 +157,7 @@ const AdminMovie = () => {
                   setShowAction(false);
                 }}
               >
-                {clickedRaw.slide === true
+                {clickedRaw.slide === 'true'
                   ? "Remove From Slide"
                   : " Add To Slide"}
               </Button>
