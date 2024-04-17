@@ -72,7 +72,7 @@ const Header = () => {
                 </>
               ) : (
                 <>
-                  <Link to="">Tickets</Link>
+                  <Link to="/dashboard">Tickets</Link>
                   <div
                     className=" cursor-pointer "
                     onClick={() => hanlderLoOut()}
