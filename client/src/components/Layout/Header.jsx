@@ -59,6 +59,7 @@ const Header = () => {
             {currentUser ? (
               currentUser.userType === "admin" ? (
                 <>
+                  <Link to="admin">Admin</Link>
                   <Link to="admin/movies">Movies</Link>
                   <Link to="admin/users">Users</Link>
                   <Link to="admin/ticket">Tickets</Link>
