@@ -1,6 +1,7 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { BsPrinter } from "react-icons/bs";
+import {Link} from "react-router-dom"
 
 const Ticket = () => {
   const dispatch = useDispatch();
