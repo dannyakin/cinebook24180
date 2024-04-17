@@ -163,7 +163,7 @@ console.log(movieId);
 
             <div className=" bg-slate-900 text-white w-full py-16 rounded-xl mt-5 shadow mb-10">
               <div className="container mx-auto">
-                <div className="grid grid-cols-2 items-center justify-center">
+                <div className="grid grid-cols-1 md:grid-cols-2 items-center justify-center">
                   <div className="grid-cols-2">
                     {/* Seat */}
                     <div className="">
