@@ -11,14 +11,15 @@ const Welcome = ({data}) => {
   useEffect(() => {
     dispatch(getAllMovies());
   }, [dispatch]);
- 
+ const filteredData = movies.filter(item => item.slide === true);
+
   return (
     <div>
       {status === "loading" ? (
         <Loading />
       ) : (
         <div className="max-w-screen max-h-screen">
-          <Slide data={data} />
+         <Slide data={filteredData} />
           <Movie movies={movies} loading={status} error={error} />
         </div>
       )}
