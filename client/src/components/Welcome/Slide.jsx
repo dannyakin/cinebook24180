@@ -304,7 +304,7 @@ const Slide = ({ data }) => {
                 <div className="flex items-center gap-2 mt-2">
                   <div className="flex gap-1 items-center">
                     <img
-                      src="/assets/images/imdb.png"
+                      src="http://www.w3.org/2000/svg"
                       alt=""
                       className="w-[60px]"
                     />
