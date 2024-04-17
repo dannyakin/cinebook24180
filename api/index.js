@@ -10,7 +10,7 @@ dotenv.config();
 // Create an Express app
 const app = express();
  cors({
-    origin: "*",
+    origin: "https://cinebook24180-1.onrender.com",
     credentials: true,
   })
 
