@@ -38,7 +38,7 @@ const Ticket = () => {
       ) : (
         <div className="relative">
           <div
-            className="absolute top-3 right-3 text-orange-600"
+            className="absolute bottom-3 right-3 text-orange-600"
             onClick={handlePrint}
           >
             <BsPrinter />
