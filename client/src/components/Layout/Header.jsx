@@ -9,7 +9,7 @@ const Header = () => {
   const hanlderLoOut = () => {
     Cookies.remove("currentUser");
     Cookies.remove("token");
-    window.location.href = "/login";
+  
   };
   return (
     <div className="fixed top-0 left-0 w-screen  shadow bg-white  ">
