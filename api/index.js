@@ -9,15 +9,17 @@ dotenv.config();
 
 // Create an Express app
 const app = express();
- cors({
-    origin: "https://cinebook24180-1.onrender.com",
-    credentials: true,
-  })
 
 // Middleware to parse JSON requests
 app.use(express.json());
 // Use cookie-parser middleware
 app.use(cookieParser());
+
+// Enable CORS with specific origin and credentials
+app.use(cors({
+  origin: "https://cinebook24180-1.onrender.com",
+  credentials: true,
+}));
 
 // Using Routes
 app.use("/api", require("./Routes/api"));
@@ -26,9 +28,9 @@ const PORT = process.env.APP_PORT || 8000;
 mongoose
   .connect(process.env.DB_USER)
   .then(() => {
-    console.log("Connected to Mongoose");
+    console.log("Connected to MongoDB");
     app.listen(PORT, () => {
       console.log(`Server is running on port ${PORT}`);
     });
   })
-  .catch((err) => console.log("Error connecting", err));
+  .catch((err) => console.log("Error connecting to MongoDB", err));
