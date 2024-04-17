@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { IoTimeSharp } from "react-icons/io5";
 import moment from "moment";
+import {Link} from "react-router-dom"
 
 const Slide = ({ data }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -317,9 +318,10 @@ const Slide = ({ data }) => {
                     </div>
                   </div>
                 </div>
+                <Link to={`/movie/${item._id}`}>
                 <button className="bg-orange-600 text-white p-2 mt-2 rounded">
                   Book Ticket
-                </button>
+                </button></Link>
               </div>
             </div>
           </div>
