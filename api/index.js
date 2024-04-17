@@ -13,7 +13,7 @@ const app = express();
     origin: "*",
     credentials: true,
   })
-);
+
 // Middleware to parse JSON requests
 app.use(express.json());
 // Use cookie-parser middleware
