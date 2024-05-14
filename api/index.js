@@ -16,8 +16,9 @@ app.use(express.json());
 app.use(cookieParser());
 
 // Enable CORS with specific origin and credentials
+// Allow requests from specific origin with credentials
 app.use(cors({
-  origin: true,
+  origin: 'https://cinebook24180-1.onrender.com',
   credentials: true,
 }));
 
