@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.authBg{
+    background-image: url("https://res.cloudinary.com/dd6wbwlw9/image/upload/v1715525578/gabdaniel/zdyig2oyvja0ahttlxnl.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}

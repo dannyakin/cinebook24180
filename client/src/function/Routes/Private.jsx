@@ -24,9 +24,10 @@ const Private = () => {
 
   // Show loading indicator while waiting for authentication check
   if (loading) return "Loading....";
+  
 
   // Show outlet if authenticated, otherwise redirect to login
-  return isAuthenticated ? <Outlet /> : <Login />;
+  return isAuthenticated ?  <Outlet /> : <Login />;
 };
 
 export default Private;

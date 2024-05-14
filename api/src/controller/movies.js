@@ -15,7 +15,7 @@ exports.createMovie = async (req, res) => {
       genres: req.body.genres,
       locations: req.body.locations,
       showingDate: req.body.showingDate,
-      image: req.body.image // Store Cloudinary image URL in database
+      image: req.body.image, // Store Cloudinary image URL in database
     });
 
     const savedMovie = await newMovie.save();
@@ -61,7 +61,8 @@ exports.editMovie = async (req, res) => {
 };
 
 exports.toggleSlide = async (req, res) => {
-  try {console.log("movie.slide");
+  try {
+    console.log("movie.slide");
     const movieId = req.params.id;
 
     // Get the movie by ID
@@ -83,7 +84,6 @@ exports.toggleSlide = async (req, res) => {
     res.status(500).json({ error: "Server error" });
   }
 };
-
 
 // Controller function to get all movies
 exports.getAllMovies = async (req, res) => {
@@ -114,6 +114,18 @@ exports.deleteMovie = async (req, res) => {
     res.status(204).end();
   } catch (error) {
     console.error("Error deleting movie:", error);
+    res.status(500).json({ error: "Server error" });
+  }
+};
+
+exports.searchMovie = async (req, res) => {
+  try {
+    const movies = await Movie.find({
+      title: { $regex: req.query.search, $options: "i" },
+    });
+    res.status(200).json(movies);
+  } catch (error) {
+    console.error("Error searching movies:", error);
     res.status(500).json({ error: "Server error" });
   }
 };

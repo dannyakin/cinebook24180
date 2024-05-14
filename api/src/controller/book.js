@@ -56,7 +56,6 @@ const bookTicket = async (req, res) => {
 const getAllTickets = async (req, res) => {
   try {
     const tickets = await Booking.find().populate("movie");
-;
     console.log(tickets);
     res.status(200).json(tickets);
   } catch (error) {

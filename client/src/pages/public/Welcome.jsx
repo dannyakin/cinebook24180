@@ -5,13 +5,13 @@ import { getAllMovies } from "../../function/Redux/Movies/movieSlice";
 import Slide from "../../components/Welcome/Slide";
 import Movie from "../../components/Welcome/Movie";
 
-const Welcome = ({data}) => {
+const Welcome = ({ data }) => {
   const { movies, status, error } = useSelector((state) => state.movie);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getAllMovies());
   }, [dispatch]);
- const filteredData = movies.filter(item => item.slide === true);
+  const filteredData = movies.filter((item) => item.slide === true);
 
   return (
     <div>
@@ -19,10 +19,11 @@ const Welcome = ({data}) => {
         <Loading />
       ) : (
         <div className="max-w-screen max-h-screen">
-         <Slide data={filteredData} />
+          <Slide data={filteredData} />
           <Movie movies={movies} loading={status} error={error} />
         </div>
       )}
+    
     </div>
   );
 };

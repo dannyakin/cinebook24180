@@ -3,6 +3,8 @@ const router = express.Router();
 const userController = require("../src/controller/user");
 const movieController = require("../src/controller/movies");
 const middleware = require("../src/middleware/auth");
+
+const adminController = require("../src/controller/admin");
 const {
   getAllTickets,
   getTicketById,
@@ -49,9 +51,17 @@ router.put("/movies/:id/slide", movieController.toggleSlide);
 // Get all users (admin-only route)
 router.get("/users", middleware.authenticateAdmin, userController.getAllUsers);
 
-
 router.get("/tickets", middleware.authenticateUser, getAllTickets); // Route to get all tickets
 router.get("/tickets/:id", middleware.authenticateUser, getTicketById); // Route to get a ticket by ID
 router.post("/tickets/", middleware.authenticateUser, bookTicket);
 router.get("/userTickets", middleware.authenticateUser, getAllUserTickets);
+
+router.get(
+  "/admin",
+  middleware.authenticateAdmin,
+  adminController.fetchDashboard
+);
+
+router.get("/search", movieController.searchMovie);
+
 module.exports = router;

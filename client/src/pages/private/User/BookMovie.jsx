@@ -48,20 +48,20 @@ console.log(movieId);
   console.log(movie)
 
   return (
-    <div className="mt-4">
+    <div className="md:mt-4 w-screen max-w-screen">
       {loading ? (
         "Loading"
       ) : (
         <div className="">
           <div className="">
             <div className="container mx-auto">
-              <div className="flex gap-4  items-end">
+              <div className="block md:flex  gap-4  items-end">
                 <img
                   src={movie?.image}
-                  className="w-[200px] h-[280px] object-cover rounded"
+                  className="w-full md:w-[200px] md:h-[280px] object-cover rounded"
                   alt=""
                 />
-                <div className="">
+                <div className="p-2">
                   <div className="uppercase text-orange-600 text-4xl font-extrabold">
                     {movie?.title}
                   </div>
@@ -97,11 +97,11 @@ console.log(movieId);
 
             {/* details\ */}
             <div className="container mx-auto mt-5">
-              <div className="w-full grid grid-cols-1  md:grid-cols-2 p-5 rounded-xl bg-slate-200 flex items-center">
+              <div className="w-full grid grid-cols-1  md:grid-cols-2 p-5  bg-slate-100 md:rounded-xl   items-center">
                 <div className="flex items-center gap-3">
-                  <div className="">Data</div>
+                  <div className="">Date</div>
                   <div className="flex overflow-auto gap-4">
-                    <div className="grid grid-cols-5 md:grid-cols-3 gap-2 mt-2">
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-2 mt-2">
                       {movie?.showingDate &&
                         movie.showingDate.map((item, i) => (
                           <div
@@ -120,7 +120,7 @@ console.log(movieId);
                   </div>
                 </div>
 
-                <div className="flex flex-cols md:flex-row gap-3">
+                <div className="mt-5 md:mt-0">
                   <div className="">
                     <div className="">Time and Format</div>
                     <div className="grid grid-cols-3 gap-2 mt-2">
@@ -161,8 +161,8 @@ console.log(movieId);
               </div>
             </div>
 
-            <div className=" bg-slate-900 text-white w-full py-16 rounded-xl mt-5 shadow mb-10">
-              <div className="container mx-auto">
+            <div className=" bg-slate-900 text-white w-full py-16  md:rounded-xl md:mt-2 shadow mb-10">
+              <div className="container mx-auto px-2 pr-4">
                 <div className="grid grid-cols-1 md:grid-cols-2 items-center justify-center">
                   <div className="grid-cols-2">
                     {/* Seat */}

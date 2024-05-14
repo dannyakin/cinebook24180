@@ -1,7 +1,8 @@
 import axios from "axios";
 import Cookies from "js-cookie";
 
-const API_BASE_URL = "https://cinebook24180.onrender.com";
+// const API_BASE_URL = "https://cinebook24180.onrender.com";
+const API_BASE_URL = "http://172.20.10.4:9000";
 
 const setupAxiosInterceptors = (token) => {
   axios.interceptors.request.use(

@@ -10,7 +10,7 @@ const Login = () => {
   const dispatch = useDispatch();
 
   return (
-    <div className="w-screen h-screen flex items-center justify-center">
+    <div className="w-screen h-screen flex items-center justify-center px-4">
       <div className="bg-white w-[800px] h-[500px] max-full max-h-full overflow-hidden rounded-xl  shadow">
         <div className="grid grid-cols-1 md:grid-cols-2 h-full">
           <div className="p-3">
@@ -19,7 +19,7 @@ const Login = () => {
               <div className="mb-4 mt-5">
                 <div className="text-2xl text-orange-500">Login</div>
                 <div className="text-sm text-gray-500">
-                  Fill your information to login to your account with us.
+                  Fill your information to login to your account.
                 </div>
               </div>
               <Formik
@@ -93,7 +93,7 @@ const Login = () => {
               {/* End of login form */}
             </div>
           </div>
-          <div className="bg-orange-600  hidden md:block"></div>
+          <div className="bg-orange-600  hidden md:block authBg" ></div>
         </div>{" "}
       </div>
     </div>

@@ -24,10 +24,10 @@ const Dashboard = () => {
         <span className="font-light text-black">Welcome</span>{" "}
         {currentUser.fullName}
       </div>
-      <div className="mt-1">This are the list of you booked tickets for.</div>
+      <div className="mt-1">These are the list of movies you booked tickets for.</div>
 
       <div className="mt-3">
-        <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4">
+        <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 gap-3">
           {loading
             ? "Loading..."
             : userTickets.length > 0
@@ -72,7 +72,7 @@ const Dashboard = () => {
                   </div>
                 </Link>
               ))
-            : "You dont have any ticket yet"}
+            : <div className="text-gray-400 text-center md:text-left mt-20 md:mt-0">You dont have any ticket yet"</div> }
         </div>
       </div>
     </div>

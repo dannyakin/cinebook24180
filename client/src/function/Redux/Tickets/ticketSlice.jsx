@@ -33,7 +33,7 @@ export const fetchUserTickets = createAsyncThunk(
   "tickets/fetchUserTickets",
   async (userId, { rejectWithValue }) => {
     try {
-      const response = await getDataAPI(`api/tickets`);
+      const response = await getDataAPI(`api/userTickets`);
       return response.data;
     } catch (error) {
       return rejectWithValue(error.response.data);

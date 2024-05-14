@@ -7,7 +7,7 @@ import { Outlet, useNavigate } from "react-router-dom";
 const Public = () => {
   const navigate = useNavigate();
   // Explicitly define the type of 'state' using the RootState interface
-  const { isAuthenticated } = useSelector((state) => state.auth);
+  const { isAuthenticated, currentUser } = useSelector((state) => state.auth);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -18,7 +18,11 @@ const Public = () => {
       }
 
       if (isAuthenticated) {
-        navigate("/dashboard");
+        if (currentUser.userType === "admin") {
+          navigate("/admin");
+        } else {
+          navigate("/dashboard");
+        }
       }
       setLoading(false);
     };

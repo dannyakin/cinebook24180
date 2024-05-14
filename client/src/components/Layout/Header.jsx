@@ -1,15 +1,18 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
+import { clearAuthState } from "../../function/Redux/Auth/AuthSlice";
+import Search from "./Search";
 
 const Header = () => {
   const dispatch = useDispatch();
   const { currentUser } = useSelector((state) => state.auth);
+  const navigate = useNavigate();
   const hanlderLoOut = () => {
     Cookies.remove("currentUser");
     Cookies.remove("token");
-  
+    dispatch(clearAuthState());
   };
   return (
     <div className="fixed top-0 left-0 w-screen  shadow bg-white  ">
@@ -18,48 +21,21 @@ const Header = () => {
           {/* logo */}
           <div className="">
             <div className="text-2xl font-extrabold">
-              Cine<span className="text-orange-600">Booker 🇮🇪 </span>
+              <Link to="/">
+                Cine<span className="text-orange-600">Booker 🇮🇪 </span>
+              </Link>
             </div>
           </div>
 
-          <div className="flex border items-center justify-center rounded-full px-4 py-2 gap-2 bg-gray-200">
-            <div className="">
-              <svg
-                width="17"
-                height="17"
-                viewBox="0 0 17 17"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M7.79167 13.4583C10.9213 13.4583 13.4583 10.9213 13.4583 7.79167C13.4583 4.66205 10.9213 2.125 7.79167 2.125C4.66205 2.125 2.125 4.66205 2.125 7.79167C2.125 10.9213 4.66205 13.4583 7.79167 13.4583Z"
-                  stroke="#5F5F5F"
-                  stroke-width="1.41667"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-                <path
-                  d="M14.8751 14.875L11.7938 11.7937"
-                  stroke="#5F5F5F"
-                  stroke-width="1.41667"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-            </div>
-            <input
-              type="text"
-              placeholder="What is on your mind"
-              className="border-none outline-none w-56 focus:outline-none hidden md:block bg-transparent text-sm"
-            />
-          </div>
+          <Search />
           {/* links      */}
-          <div className="flex gap-2 items-center justify-center">
-            <Link to="/">Home</Link>
+          <div className="flex gap-2 items-center justify-center text-[13px]">
+            {/* <Link to="/">Home</Link> */}
             {currentUser ? (
               currentUser.userType === "admin" ? (
                 <>
-             
+                  {" "}
+                  <Link to="admin/">Dashboard</Link>
                   <Link to="admin/movies">Movies</Link>
                   <Link to="admin/users">Users</Link>
                   <Link to="admin/ticket">Tickets</Link>
@@ -82,7 +58,10 @@ const Header = () => {
                 </>
               )
             ) : (
-              <Link to="login">Sign In</Link>
+              <>
+                <Link to="/login">Sign In</Link>
+                <Link to="/register">Join Us</Link>
+              </>
             )}
           </div>
         </div>

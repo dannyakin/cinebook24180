@@ -58,7 +58,7 @@ const Slide = ({ data }) => {
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
     >
-      <div className="flex items-center overflow-hidden">
+      <div className="flex items-center overflow-hidden ">
         {data.map((item, index) => (
           <div
             key={index}
@@ -77,7 +77,7 @@ const Slide = ({ data }) => {
                 backgroundImage: `url('/assets/images/bg.png')`,
               }}
             >
-              <div className="container mx-auto">
+              <div className="container mx-auto p-4 md:p-0">
                 {/* You can add additional content inside the slide item */}
                 <div className="flex gap-2 text-white mb-2">
                   {item.genres &&

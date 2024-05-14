@@ -5,8 +5,8 @@ const Movie = ({ movies, status, error }) => {
   const navigate = useNavigate();
   return (
     <div className="container mx-auto mt-5 mb-5">
-      <div className="text-orange-600 text-3xl">Movie To watch</div>
-      <div className="text-gray-500 text-xs">
+      <div className="text-orange-600 text-3xl px-2">Movie To watch</div>
+      <div className="text-gray-500 text-xs px-2">
         This are the list of available movies you can watch with us
       </div>
       {error && <div className="text-red-500 text-[14px]">{error}</div>}
@@ -42,6 +42,9 @@ const Movie = ({ movies, status, error }) => {
             </div>
           </div>
         ))}
+      </div>
+      <div class="text-center mx-5 py-5 text-gray-400 text-[12px]">
+        Project was developed by Daniel Gbenle with student id: 24180.
       </div>
     </div>
   );

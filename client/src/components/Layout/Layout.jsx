@@ -5,8 +5,10 @@ import { Outlet } from "react-router-dom";
 const Layout = () => {
   return (
     <div className="relative">
-      <Header />
-      <div className="pt-[65px]">
+      <div style={{ zIndex: 99999999999999 }}>
+        <Header />
+      </div>
+      <div className="pt-[65px]" style={{ zIndex: 2 }}>
         <Outlet />
       </div>
     </div>

@@ -10,17 +10,17 @@ const Register = () => {
   const dispatch = useDispatch();
 
   return (
-    <div className="w-screen h-screen flex items-center justify-center">
+    <div className="w-screen h-screen flex items-center justify-center p-4">
       <div className="bg-white w-[800px] h-[500px] max-full max-h-full overflow-hidden rounded-xl  shadow">
         <div className="grid grid-cols-1 md:grid-cols-2 h-full">
-          <div className="bg-orange-600 hidden md:block"></div>
+          <div className="bg-orange-600 hidden md:block authBg"></div>
           <div className="p-3">
             <div className="flex h-full w-full justify-center flex-col">
               {/* Login form */}
               <div className="mb-4 mt-5">
                 <div className="text-2xl text-orange-500">Create Account</div>
                 <div className="text-sm text-gray-500">
-                  Fill your information to create an ccount with us.
+                  Fill your information to create an account with us.
                 </div>
               </div>
               <Formik
