@@ -26,7 +26,7 @@ const BookMovie = () => {
 console.log(movieId);
   useEffect(() => {
     dispatch(fetchMovies(movieId));
-  }, [dispatch]);
+  }, [dispatch,movieId]);
 
   useEffect(() => {
     setAmount(12 * seat.length);

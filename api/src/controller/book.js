@@ -67,7 +67,7 @@ const getAllTickets = async (req, res) => {
 const getTicketById = async (req, res) => {
   const { id } = req.params;
   try {
-    const ticket = await Booking.findById(id);
+    const ticket = await Booking.find();
     if (!ticket) {
       return res.status(404).json({ message: "Ticket not found" });
     }

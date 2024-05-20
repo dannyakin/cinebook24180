@@ -43,7 +43,7 @@ const Movie = ({ movies, status, error }) => {
           </div>
         ))}
       </div>
-      <div class="text-center mx-5 py-5 text-gray-400 text-[12px]">
+      <div className="text-center mx-5 py-5 text-gray-400 text-[12px]">
         Project was developed by Daniel Gbenle with student id: 24180.
       </div>
     </div>
